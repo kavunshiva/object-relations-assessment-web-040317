@@ -94,5 +94,4 @@ class Review
     @content = content
     self.class.all << self
   end
-
 end
