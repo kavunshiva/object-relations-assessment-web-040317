@@ -8,10 +8,9 @@ class Restaurant
   end
 
   def self.find_by_name(name)
-    self.all.each do |restaurant|
-      return restaurant if restaurant.name == name
+    self.all.find do |restaurant|
+      restaurant.name == name
     end
-    nil
   end
 
   def initialize(name)

@@ -9,11 +9,10 @@ class Customer
 
   def self.find_by_name(name)
     first_name, last_name = name.split
-    self.all.each do |customer|
-      return customer if customer.first_name == first_name &&
+    self.all.find do |customer|
+      customer.first_name == first_name &&
       customer.last_name == last_name
     end
-    nil
   end
 
   def self.find_all_by_first_name(name)
@@ -54,10 +53,9 @@ class Restaurant
   end
 
   def self.find_by_name(name)
-    self.all.each do |restaurant|
-      return restaurant if restaurant.name == name
+    self.all.find do |restaurant|
+      restaurant.name == name
     end
-    nil
   end
 
   def initialize(name)
